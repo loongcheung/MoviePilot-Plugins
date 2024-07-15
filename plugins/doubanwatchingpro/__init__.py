@@ -6,7 +6,7 @@ from app.chain.media import MediaChain
 from app.core.event import eventmanager, Event
 from app.core.metainfo import MetaInfo
 from app.plugins import _PluginBase
-from app.plugins.doubanwatching.DoubanHelper import DoubanHelper
+from app.plugins.doubanwatchingpro.DoubanHelper import DoubanHelper
 from app.schemas import WebhookEventInfo, MediaInfo
 from app.schemas.types import EventType, MediaType
 import re
@@ -63,7 +63,7 @@ class DouBanWatchingPro(_PluginBase):
 
         if self.get_data("processed"):
             from app.db.plugindata_oper import PluginDataOper
-            PluginDataOper().del_data(plugin_id="DouBanWatching")
+            PluginDataOper().del_data(plugin_id="DouBanWatchingPro")
             logger.warn("检测到本插件旧版本数据，删除旧版本数据，避免报错...")
 
     @eventmanager.register(EventType.WebhookMessage)
@@ -391,37 +391,6 @@ class DouBanWatchingPro(_PluginBase):
                                             'type': 'info',
                                             'variant': 'tonal',
                                             'text': '需要开启媒体服务器的webhook，需要浏览器登录豆瓣，将豆瓣的cookie同步到cookiecloud，也可以手动将cookie填写到此处，不异地登陆有效期很久。'
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                'component': 'VCol',
-                                'props': {
-                                    'cols': 12,
-                                },
-                                'content': [
-                                    {
-                                        'component': 'VAlert',
-                                        'props': {
-                                            'type': 'info',
-                                            'variant': 'tonal',
-                                            'text': 'v1.8+ 解决了容易提示cookie失效，导致同步失败的问题，现在用cookiecloud应该不用填保活了,建议使用cookiecloud。'
-                                        }
-                                    }
-                                ]
-                            }, {
-                                'component': 'VCol',
-                                'props': {
-                                    'cols': 12,
-                                },
-                                'content': [
-                                    {
-                                        'component': 'VAlert',
-                                        'props': {
-                                            'type': 'info',
-                                            'variant': 'tonal',
-                                            'text': 'v1.9.0 支持标记已观看同步，播放自动同步。'
                                         }
                                     }
                                 ]
