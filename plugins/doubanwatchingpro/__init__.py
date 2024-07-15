@@ -23,7 +23,7 @@ class DouBanWatchingPro(_PluginBase):
     # 插件图标
     plugin_icon = "douban.png"
     # 插件版本
-    plugin_version = "1.0.3"
+    plugin_version = "1.0.4"
     # 插件作者
     plugin_author = "loongcheung"
     # 作者主页
@@ -70,18 +70,13 @@ class DouBanWatchingPro(_PluginBase):
     def sync_log(self, event: Event, played: bool = False):
         event_info: WebhookEventInfo = event.event_data
         play_start = {"playback.start", "media.play", "PlaybackStart"}
-        path = event_info.item_path
+        # plex 没返回 path
+        path = event_info.item_path if event_info.item_path else event_info.item_name
         processed_items: Dict = self.get_data('data') or {}
+        tmdbId = event_info.tmdb_id
 
-        logger.info(f"log name {event_info.item_name}")
-        logger.info(f"log item_type {event_info.item_type}")
-        logger.info(f"log item_type {event_info.media_type}")
-        logger.info(f"log path {event_info.item_path}")
-        logger.info(f"log user_name {event_info.user_name}")
-        logger.info(f"log event {event_info.event}")
-
-        for value in event_info.values():
-             logger.info(f"log event_info {value}")
+        logger.info(f"log path {path}")
+        logger.info(f"log tmdbId {event_info.tmdbId}")
 
         if (event_info.event in play_start and event_info.user_name in self._user.split(',')) or played:
             logger.info("开始同步")
@@ -92,6 +87,10 @@ class DouBanWatchingPro(_PluginBase):
             logger.info(exclude_result.get("message", ""))
 
             if not exclude_result.get("ret", False):
+                return
+            
+            if not tmdbId:
+                logger.info("未获取到tmdbid，不同步")
                 return
 
             if event_info.item_type == "TV":
