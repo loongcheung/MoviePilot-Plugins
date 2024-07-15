@@ -23,7 +23,7 @@ class DouBanWatchingPro(_PluginBase):
     # 插件图标
     plugin_icon = "douban.png"
     # 插件版本
-    plugin_version = "1.0.1"
+    plugin_version = "1.0.2"
     # 插件作者
     plugin_author = "loongcheung"
     # 作者主页
@@ -73,8 +73,13 @@ class DouBanWatchingPro(_PluginBase):
         path = event_info.item_path
         processed_items: Dict = self.get_data('data') or {}
 
+        logger.info(f"log {event_info.item_name}")
+        logger.info(f"log {event_info.item_path}")
+        logger.info(f"log {event_info.user_name}")
+        logger.info(f"log {event_info.event}")
+
         if (event_info.event in play_start and event_info.user_name in self._user.split(',')) or played:
-            logger.info(" ")
+            logger.info("开始同步")
             if played:
                 logger.info(f"标记播放完成 {event_info.item_name}")
 

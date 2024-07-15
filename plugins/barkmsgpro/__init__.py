@@ -271,7 +271,7 @@ class BarkMsgPro(_PluginBase):
         pass
     
     @staticmethod
-    def includes_keyword(path: str, keywords: str) -> Dict[str, Any]:
+    def (path: str, keywords: str) -> Dict[str, Any]:
         if not keywords:
             return {"ret": True, "message": "空关键词"}
 
