@@ -2,7 +2,7 @@
   "DouBanWatchingPro": {
     "name": "豆瓣书影音档案个人版",
     "description": "将剧集在看、看完状态同步到豆瓣书影音档案。",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "icon": "douban.png",
     "author": "loongcheung",
     "level": 1
