@@ -8,7 +8,7 @@ from app.schemas.types import EventType, NotificationType
 from app.utils.http import RequestUtils
 import re
 
-class BarkMsg(_PluginBase):
+class BarkMsgPro(_PluginBase):
     # 插件名称
     plugin_name = "Bark消息通知个人版"
     # 插件描述

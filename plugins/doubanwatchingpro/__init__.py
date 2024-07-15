@@ -15,7 +15,7 @@ from app.log import logger
 lock = threading.Lock()
 
 
-class DouBanWatching(_PluginBase):
+class DouBanWatchingPro(_PluginBase):
     # 插件名称
     plugin_name = "豆瓣书影音档案个人版"
     # 插件描述
