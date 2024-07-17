@@ -21,9 +21,9 @@ class DouBanWatchingPro(_PluginBase):
     # 插件描述
     plugin_desc = "将剧集电影的在看、看完状态同步到豆瓣书影音档案。"
     # 插件图标
-    plugin_icon = "douban.png"
+    plugin_icon = "https://raw.githubusercontent.com/loongcheung/MoviePilot-Plugins/main/icons/douban.png"
     # 插件版本
-    plugin_version = "1.1.0"
+    plugin_version = "1.1.1"
     # 插件作者
     plugin_author = "loongcheung"
     # 作者主页

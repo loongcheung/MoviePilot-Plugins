@@ -14,9 +14,9 @@ class BarkMsgPro(_PluginBase):
     # 插件描述
     plugin_desc = "支持使用Bark发送消息通知。"
     # 插件图标
-    plugin_icon = "Bark_A.png"
+    plugin_icon = "https://raw.githubusercontent.com/loongcheung/MoviePilot-Plugins/main/icons/Bark_A.png"
     # 插件版本
-    plugin_version = "1.0.0"
+    plugin_version = "1.0.1"
     # 插件作者
     plugin_author = "loongcheung"
     # 作者主页
@@ -271,7 +271,7 @@ class BarkMsgPro(_PluginBase):
         pass
     
     @staticmethod
-    def (path: str, keywords: str) -> Dict[str, Any]:
+    def includes_keyword(path: str, keywords: str) -> Dict[str, Any]:
         if not keywords:
             return {"ret": True, "message": "空关键词"}
 

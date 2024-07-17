@@ -2,8 +2,8 @@
   "DouBanWatchingPro": {
     "name": "豆瓣书影音档案个人版",
     "description": "将剧集在看、看完状态同步到豆瓣书影音档案。",
-    "version": "1.1.0",
-    "icon": "douban.png",
+    "version": "1.1.1",
+    "icon": "https://raw.githubusercontent.com/loongcheung/MoviePilot-Plugins/main/icons/douban.png",
     "author": "loongcheung",
     "level": 1
   },
@@ -11,8 +11,8 @@
     "name": "Bark消息推送个人版",
     "description": "支持使用Bark发送消息通知。",
     "labels": "消息通知",
-    "version": "1.0.0",
-    "icon": "Bark_A.png",
+    "version": "1.0.1",
+    "icon": "https://raw.githubusercontent.com/loongcheung/MoviePilot-Plugins/main/icons/Bark_A.png",
     "author": "loongcheung",
     "level": 1
   }
